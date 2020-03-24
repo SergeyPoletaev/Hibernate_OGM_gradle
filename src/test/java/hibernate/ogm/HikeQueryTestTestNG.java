@@ -42,5 +42,6 @@ public class HikeQueryTestTestNG {
 		}
 		entityManager.getTransaction().commit();
 		entityManager.close();
+		
 	}
 }
