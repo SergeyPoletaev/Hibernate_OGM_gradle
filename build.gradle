@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.testng:testng:7.1.0'
+    implementation 'org.hibernate.ogm:hibernate-ogm-mongodb:5.4.0.Final'
+    implementation 'org.jboss.narayana.jta:narayana-jta:5.5.23.Final'
+    implementation 'org.jboss.jbossts:jbossjta:4.16.6.Final'
+}
+
+// Allow resources to live in same directory as source code
+//sourceSets.main.resources.srcDirs += ["src/main/java"]
+//sourceSets.test.resources.srcDirs += ["src/test/java"]
+
+
+
+test {
+    useTestNG()
+}
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
